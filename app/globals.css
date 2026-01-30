@@ -2,26 +2,152 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* Base Colors */
+  --background: 0 0% 100%;         /* أبيض */
+  --foreground: 0 0% 3.9%;   /* قريب من أسود داكن */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+
+  /* Primary - Vivid Blue */
+  --primary-50: 210 100% 96%;
+  --primary-100: 210 95% 88%;
+  --primary-200: 210 90% 78%;
+  --primary-300: 210 85% 66%;
+  --primary-400: 210 80% 53%;
+  --primary-500: 210 85% 45%; /* main blue */
+  --primary-600: 210 90% 38%;
+  --primary-700: 210 95% 30%;
+  --primary-800: 210 100% 22%;
+  --primary-900: 210 100% 15%;
+  --primary-950: 210 100% 10%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+
+  /* Secondary - Vivid Orange */
+  --secondary-50: 30 100% 96%;
+  --secondary-100: 30 95% 88%;
+  --secondary-200: 30 90% 78%;
+  --secondary-300: 30 85% 66%;
+  --secondary-400: 30 80% 53%;
+  --secondary-500: 30 85% 45%; /* main orange */
+  --secondary-600: 30 90% 38%;
+  --secondary-700: 30 95% 30%;
+  --secondary-800: 30 100% 22%;
+  --secondary-900: 30 100% 15%;
+  --secondary-950: 30 100% 10%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+
+  /* Accent - Neutral Gray */
+  --accent-50: 210 20% 98%;
+  --accent-100: 210 15% 96%;
+  --accent-200: 210 12% 91%;
+  --accent-300: 210 12% 84%;
+  --accent-400: 210 11% 65%;
+  --accent-500: 210 10% 46%;
+  --accent-600: 210 14% 34%;
+  --accent-700: 210 19% 27%;
+  --accent-800: 210 28% 17%;
+  --accent-900: 210 39% 11%;
+  --accent-950: 210 71% 4%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+
+  /* Neutral Colors */
+  --neutral-50: 210 20% 98%;
+  --neutral-100: 220 14% 96%;
+  --neutral-200: 220 13% 91%;
+  --neutral-300: 216 12% 84%;
+  --neutral-400: 218 11% 65%;
+  --neutral-500: 220 9% 46%;
+  --neutral-600: 215 14% 34%;
+  --neutral-700: 217 19% 27%;
+  --neutral-800: 215 28% 17%;
+  --neutral-900: 221 39% 11%;
+  --neutral-950: 224 71% 4%;
+
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Sidebar Colors */
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+
+  --radius: 0.5rem;
+
+  --chart-1: 12 76% 61%;
+
+  --chart-2: 173 58% 39%;
+
+  --chart-3: 197 37% 24%;
+
+  --chart-4: 43 74% 66%;
+
+  --chart-5: 27 87% 67%;
+}
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
+
+@layer components {
+  .dashboard-card {
+    @apply bg-card text-card-foreground border border-border rounded-lg shadow-sm;
+  }
+
+  .stat-card {
+    @apply dashboard-card p-6 hover:shadow-md transition-shadow;
+  }
+
+  .chart-container {
+    @apply dashboard-card p-6;
+  }
+}
+
